@@ -12,34 +12,34 @@
 ################################################################################
 
 ## customize shell, check if the config exists, if not, add it to .bashrc
-if [[ -z $(grep "alias ll='ls -l'" $user_path/.bashrc) ]]; then
-	printf "alias ll='ls -l'\n" >> $user_path/.bashrc
+if [[ -z $(grep "alias ll='ls -l'" $HOME/.bashrc) ]]; then
+	printf "alias ll='ls -l'\n" >> $HOME/.bashrc
 fi
 
-if [[ -z $(grep "alias lh='ls -lh'" $user_path/.bashrc) ]]; then
-	printf "alias lh='ls -lh'\n" >> $user_path/.bashrc
+if [[ -z $(grep "alias lh='ls -lh'" $HOME/.bashrc) ]]; then
+	printf "alias lh='ls -lh'\n" >> $HOME/.bashrc
 fi
 
-if [[ -z $(grep "alias la='ls -la'" $user_path/.bashrc) ]]; then
-	printf "alias la='ls -la'\n" >> $user_path/.bashrc
+if [[ -z $(grep "alias la='ls -la'" $HOME/.bashrc) ]]; then
+	printf "alias la='ls -la'\n" >> $HOME/.bashrc
 fi
 
-if [[ -z $(grep "alias syst='systemctl status'" $user_path/.bashrc) ]]; then
-	printf "alias syst='systemctl status'\n" >> $user_path/.bashrc
-fi
-
-
-if [[ -z $(grep "alias pls='sudo $(history -p !!)'" $user_path/.bashrc) ]]; then
-	printf "alias pls='sudo $(history -p !!)'\n" >> $user_path/.bashrc
-fi
-
-if [[ -z $(grep "alias fuck='pkill $1'" $user_path/.bashrc) ]]; then
-	printf "alias pls='alias fuck='pkill $1'\n" >> $user_path/.bashrc
+if [[ -z $(grep "alias syst='systemctl status'" $HOME/.bashrc) ]]; then
+	printf "alias syst='systemctl status'\n" >> $HOME/.bashrc
 fi
 
 
-if [[ -z $(grep "screenfetch -E" $user_path/.bashrc) ]]; then
-	printf "screenfetch -E\n" >> $user_path/.bashrc
+if [[ -z $(grep "alias pls='sudo $(history -p !!)'" $HOME/.bashrc) ]]; then
+	printf "alias pls='sudo $(history -p !!)'\n" >> $HOME/.bashrc
+fi
+
+if [[ -z $(grep "alias fuck='pkill $1'" $HOME/.bashrc) ]]; then
+	printf "alias pls='alias fuck='pkill $1'\n" >> $HOME/.bashrc
+fi
+
+
+if [[ -z $(grep "screenfetch -E" $HOME/.bashrc) ]]; then
+	printf "screenfetch -E\n" >> $HOME/.bashrc
 fi
 
 if ! [[ -e /root/.bashrc ]]; then
