@@ -29,17 +29,18 @@ if [[ -z $(grep "alias syst='systemctl status'" $HOME/.bashrc) ]]; then
 fi
 
 
-if [[ -z $(grep "alias pls='sudo $(history -p !!)'" $HOME/.bashrc) ]]; then
-	printf "alias pls='sudo $(history -p !!)'\n" >> $HOME/.bashrc
+if [[ -z $(grep "alias pls='sudo \$(history -p !!)'" $HOME/.bashrc) ]]; then
+	printf "alias pls='sudo \$(history -p !!)'\n" >> $HOME/.bashrc
 fi
 
-if [[ -z $(grep "alias fuck='pkill $1'" $HOME/.bashrc) ]]; then
-	printf "alias pls='alias fuck='pkill $1'\n" >> $HOME/.bashrc
+if [[ -z $(grep "alias fuck='pkill \$1'" $HOME/.bashrc) ]]; then
+	printf "alias fuck='pkill \$1'\n" >> $HOME/.bashrc
 fi
 
-
-if [[ -z $(grep "screenfetch -E" $HOME/.bashrc) ]]; then
+if ! [[ -z $(command -v screenfetch) ]]; then
+	if [[ -z $(grep "screenfetch -E" $HOME/.bashrc) ]]; then
 	printf "screenfetch -E\n" >> $HOME/.bashrc
+	fi
 fi
 
 if ! [[ -e /root/.bashrc ]]; then
@@ -70,6 +71,8 @@ if [[ -z $(sudo grep "alias syse='systemctl enable'" /root/.bashrc) ]]; then
 	sudo runuser -l "root" -c "printf \"alias syse='systemctl enable'\n\" >> /root/.bashrc"
 fi
 
-if [[ -z $(sudo grep "alias fuck='pkill $1'" /root/.bashrc) ]]; then
-	sudo runuser -l "root" -c "printf \"alias fuck='pkill $1'\n\" >> /root/.bashrc"
+if [[ -z $(sudo grep "alias fuck='pkill \$1'" /root/.bashrc) ]]; then
+	sudo runuser -l "root" -c "printf 'alias fuck=\"pkill \$1\"\n' >> /root/.bashrc"
 fi
+
+printf "Aliases added...\n"
