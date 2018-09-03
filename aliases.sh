@@ -28,6 +28,31 @@ if [[ -z $(grep "alias syst='systemctl status'" $HOME/.bashrc) ]]; then
 	printf "alias syst='systemctl status'\n" >> $HOME/.bashrc
 fi
 
+if [[ -z $(grep "alias sysr='systemctl restart'" $HOME/.bashrc) ]]; then
+	printf "alias sysr='sudo systemctl restart'\n" >> $HOME/.bashrc
+fi
+
+if [[ -z $(grep "alias syse='systemctl enable'" $HOME/.bashrc) ]]; then
+	printf "alias syse='sudo systemctl enable'\n" >> $HOME/.bashrc
+fi
+
+if [[ -z $(grep "alias sysd='systemclt disable'" $HOME/.bashrc) ]]; then
+	printf "alias sysd='sudo systemctl disable'\n" >> $HOME/.bashrc
+fi
+
+if ! [[ -z $(command -v git) ]]; then
+	if [[ -z $(grep "alias gita='git add'" $HOME/.bashrc) ]]; then
+		printf "alias gita='git add'\n" >> $HOME/.bashrc
+	fi
+
+	if [[ -z $(grep "alias gitc='git commit -m'" $HOME/.bashrc) ]]; then
+		printf "alias gitc='git commit -m'\n" >> $HOME/.bashrc
+	fi
+
+	if [[ -z $(grep "alias gitp='git push'" $HOME/.bashrc) ]]; then
+		print "alias gitp='git push'\n" >> $HOME/.bashrc
+	fi
+fi
 
 if [[ -z $(grep "alias pls='sudo \$(history -p !!)'" $HOME/.bashrc) ]]; then
 	printf "alias pls='sudo \$(history -p !!)'\n" >> $HOME/.bashrc
@@ -69,6 +94,10 @@ fi
 
 if [[ -z $(sudo grep "alias syse='systemctl enable'" /root/.bashrc) ]]; then
 	sudo runuser -l "root" -c "printf \"alias syse='systemctl enable'\n\" >> /root/.bashrc"
+fi
+
+if [[ -z $(sudo grep "alias sysd='systemclt disable'" /root/.bashrc) ]]; then
+	sudo runuser -l "root" -c "printf \"alias sysd='systemctl disable'\n\" >> /root/.bashrc"
 fi
 
 if [[ -z $(sudo grep "alias fuck='pkill \$1'" /root/.bashrc) ]]; then
