@@ -50,7 +50,7 @@ if ! [[ -z $(command -v git) ]]; then
 	fi
 
 	if [[ -z $(grep "alias gitp='git push'" $HOME/.bashrc) ]]; then
-		print "alias gitp='git push'\n" >> $HOME/.bashrc
+		printf "alias gitp='git push'\n" >> $HOME/.bashrc
 	fi
 fi
 
