@@ -59,4 +59,4 @@ bash aliases.sh
 
 ## License
 
-This project is licensed under the GPLv3 License - see the [LICENSE](https://github.com/chn555/timestamp/blob/master/LICENSE) file for details
+This project is licensed under the GPLv3 License - see the [LICENSE](https://github.com/BigRush/Aliases/blob/master/LICENSE) file for details
