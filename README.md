@@ -1,8 +1,4 @@
-# Project Title
-
-Aliases
-
-# What it does
+# Aliases
 
 Adds custom aliases that I usually use
 
